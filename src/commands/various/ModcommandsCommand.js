@@ -12,7 +12,7 @@ module.exports = class modcommandsCommand extends BaseCommand {
     .addField('N-1','¿ban')
     .addField('how to use it?','Simple! \`¿ban @user reason (//why you do want to ban this member//)\` the member will receive a DM with the info of his/her ban')
     .addField('N-2','¿tempban')
-    .addField('how to use it?','Simple! \`¿tempban @user reason (//why you do want to tempban this member//) time (//how much time do you want to ban this user, ypu have to put; 1m(for minutes)1h(for hours) a that format with the time oyu //)\` the member will receive a DM with the info of his/her tempban')
+    .addField('how to use it?','Simple! \`¿tempban @user reason (//why you do want to tempban this member//) time (//how much time do you want to ban this user, you have to put it im this format: 1m(for minutes)1h(for hours) But with the time you want //)\` the member will receive a DM with the info of his/her tempban')
     .addField('N-3','¿kick')
     .addField('how to use it?',' \`¿kick @user reason (//why you do want to kick this member//)\`the member will receive a DM with the info of his/her kick')
     .addField('N-4','¿lock')

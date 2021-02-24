@@ -1,1 +1,1 @@
-Worker: node ./src/index.j
+Worker: node ./src/index.js

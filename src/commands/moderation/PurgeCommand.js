@@ -7,7 +7,7 @@ module.exports = class PurgeCommand extends BaseCommand {
 
   
   async run(client, message, args) {
-    message.delete();
+    
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You dont have permissions to delete messages')
     if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("i dont have permissions to delete messages")
     if (!args[0]) return message.channel.send("You must put a number to use this command! (1-500)")

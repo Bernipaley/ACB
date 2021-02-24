@@ -15,7 +15,7 @@ module.exports = class WarnCommand extends BaseCommand {
       message.delete();
 
    try {
-     await message.channel.send(sayEmbed);
+     await message.channel.send(warnEmbed);
      
   }  catch(err) {
     console.log(err)

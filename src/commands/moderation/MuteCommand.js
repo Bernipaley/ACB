@@ -21,7 +21,7 @@ module.exports = class MuteCommand extends BaseCommand {
       .setFooter("Aviation Club Bot, Created by Bernardo Paley")
     
  
-    if(args[0]) return message.channel.send('🛑\`¿mute @user reason\`🛑 ');
+    if(!args[0]) return message.channel.send('🛑\`¿mute @user reason\`🛑 ');
     if(!mentionedMember) return message.channel.send('🛑I dont find the member🛑');
     if(!mentionedMember.user.id == message.author.id) return message.channel.send('🛑You cannot mute yourself🛑')
     if(!mentionedMember.user.id == client.user.id) return message.channel.send('🛑You cannot mute me with my own command 🛑');

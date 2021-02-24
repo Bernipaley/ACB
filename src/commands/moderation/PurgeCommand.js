@@ -5,12 +5,14 @@ module.exports = class PurgeCommand extends BaseCommand {
     super('purge', 'moderation', []);
   }
 
+  
   async run(client, message, args) {
+    message.delete();
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You dont have permissions to delete messages')
     if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("i dont have permissions to delete messages")
     if (!args[0]) return message.channel.send("You must put a number to use this command! (1-500)")
     const amonutToDelete = Number(args[0], 10);
-    message.delete();
+    
 
     if (isNaN(amonutToDelete)) return message.channel.send("Number invalid!")
     if (!Number.isInteger(amonutToDelete)) return message.channel.send("Number must be a whole number");

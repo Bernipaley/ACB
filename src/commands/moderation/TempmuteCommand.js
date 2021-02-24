@@ -21,8 +21,7 @@ module.exports = class TempmuteCommand extends BaseCommand {
       .setTitle(`🛑You have been tempmuted from ${message.guild.name}🛑`)
       .addField(`Duration ${time}`, `Reason ${reason}`)
       .setTimestamp();
-      const tempmutefinishedEmbed = new discord.MessageEmbed()
-      .setTitle(`You tempban in ${message.guild.name}`)
+      
 
     const tempmutefinishedEmbed = new discord.MessageEmbed()
       .setTitle(`Your tempmuted has been finished at ${message.guild.name}`);
@@ -41,7 +40,7 @@ module.exports = class TempmuteCommand extends BaseCommand {
     }, ms(time));
     await mentionedMember.roles.remove(muteRole).catch(err => console.log(err));
     await mentionedMember.roles.add(memberRole).catch(err => console.log(err));
-    await mentionedMember.send(`Your tempmuted has been finished at ${message.guild.name}`).catch(err => console.log(err));
+    await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
 
 
 

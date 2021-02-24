@@ -34,7 +34,7 @@ module.exports = class MuteCommand extends BaseCommand {
 
     await mentionedMember.send(muteEmbed).catch(err => console.log(err));
     await mentionedMember.roles.add(muteRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while tring to add the mute role to the member🛑')));
-    await mentionedMember.roles.remove(memberRole, memberRole1, memberRole2, memberRole3, memberRole4).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while trying to remove the member roles to the user🛑')));
+    await mentionedMember.roles.remove(memberRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while trying to remove the member roles to the user🛑')));
     
 
 

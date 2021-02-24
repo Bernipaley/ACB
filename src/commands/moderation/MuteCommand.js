@@ -27,7 +27,7 @@ module.exports = class MuteCommand extends BaseCommand {
     if(!mentionedMember.user.id == client.user.id) return message.channel.send('🛑You cannot mute me with my own command 🛑');
     if (!reason) reason = 'No reason given';
     if (!mentionedMember.roles.cache.has(muteRole.id)) return message.channel.id('🛑This member is already muted🛑');
-    if (message.member.roles.highest.position <= mentionedMember.roles.highest.position) return message.channel.send('🛑You cannot mute someone with the same role or higher then you.🛑')
+    if (message.member.roles.highest.postition <= mentionedMember.roles.highest.postition) return message.channel.send('🛑You cannot mute someone with the same role or higher then you.🛑')
 
 
     await mentionedMember.send(muteEmbed).catch(err => console.log(err));

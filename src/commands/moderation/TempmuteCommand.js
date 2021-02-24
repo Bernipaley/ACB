@@ -10,20 +10,22 @@ module.exports = class TempmuteCommand extends BaseCommand {
   async run(client, message, args) {
     if (!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send('🛑YOU DONT HAVE PERMISSION TO USE THIS COMMAND🛑');
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send('🛑I DONT HAVE PERMISSION TO USE THIS COMMAND🛑');
-    
+
     const muteRole = message.guild.roles.cache.get('814105079845879838');
-    const memberRole = message.guild.roles.cache.get('801623868787785738'); 
+    const memberRole = message.guild.roles.cache.get('801623868787785738');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     let time = args[1];
     let reason = args.slice(2).join(" ");
 
     const tempmuteEmbed = new discord.MessageEmbed()
-    .setTitle(`🛑You have been tempmuted from ${message.guild.name}🛑`)
-    .addField(`Duration ${time}`, `Reason ${reason}`)
-    .setTimestamp();
-     
+      .setTitle(`🛑You have been tempmuted from ${message.guild.name}🛑`)
+      .addField(`Duration ${time}`, `Reason ${reason}`)
+      .setTimestamp();
+      const tempmutefinishedEmbed = new discord.MessageEmbed()
+      .setTitle(`You tempban in ${message.guild.name}`)
+
     const tempmutefinishedEmbed = new discord.MessageEmbed()
-    .setTitle(`Your tempmuted has been finished at ${message.guild.name}`);
+      .setTitle(`Your tempmuted has been finished at ${message.guild.name}`);
 
     if (!args[0]) return message.channel.send('🛑You must mention a member to tempmute with a duration. \`¿tempmute @user time reason\`🛑');
     if (!mentionedMember) return message.channel.send('🛑I DONT FIND THE MEMBER🛑');
@@ -32,17 +34,13 @@ module.exports = class TempmuteCommand extends BaseCommand {
     if (reason) reason = 'No reason given';
 
 
-    await mentionedMember.roles.add(memberRole.id).catch(err => console.log(err));
-    await mentionedMember.roles.remove(muteRole.id).catch(err => console.log(err));
-    await mentionedMember.send(tempmuteEmbed).catch(err => console.log(err));
-
     setTimeout(async function () {
       await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
       await mentionedMember.roles.remove(memberRole).catch(err => console.log(err));
-      await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
+      await mentionedMember.send(tempmuteEmbed).catch(err => console.log(err));
     }, ms(time));
-    await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
-    await mentionedMember.roles.remove(memberRole).catch(err => console.log(err));
+    await mentionedMember.roles.remove(muteRole).catch(err => console.log(err));
+    await mentionedMember.roles.add(memberRole).catch(err => console.log(err));
     await mentionedMember.send(`Your tempmuted has been finished at ${message.guild.name}`).catch(err => console.log(err));
 
 

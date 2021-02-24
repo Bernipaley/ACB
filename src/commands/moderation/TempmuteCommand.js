@@ -43,7 +43,7 @@ module.exports = class TempmuteCommand extends BaseCommand {
     }, ms(time));
     await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
     await mentionedMember.roles.remove(memberRole).catch(err => console.log(err));
-    await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
+    await mentionedMember.send(`Your tempmuted has been finished at ${message.guild.name}`).catch(err => console.log(err));
 
 
 

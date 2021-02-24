@@ -19,7 +19,7 @@ module.exports = class MuteCommand extends BaseCommand {
       .setColor('RANDOM')
       .setTimestamp()
       .setFooter("Aviation Club Bot, Created by Bernardo Paley")
-      const sEmbed = new Discord.MessageEmbed
+      const sEmbed = new Discord.MessageEmbed()
       .setTitle('Member muted');
     
  

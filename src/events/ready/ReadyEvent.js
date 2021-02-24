@@ -15,5 +15,8 @@ module.exports = class ReadyEvent extends BaseEvent {
       status: 'online'
     })
     .catch(console.error);
+    client.user.setUseName(`{${client.prefix} ${client.user.username}`)
+    .then(user => console.log(`My new username is: ${user.username}`))
+    .catch(console.error);
   }
 }

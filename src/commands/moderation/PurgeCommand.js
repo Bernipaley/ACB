@@ -24,6 +24,7 @@ module.exports = class PurgeCommand extends BaseCommand {
     } catch (err) {
       console.log(err);
       message.channel.send(`i was unable to delete the amount selected, make sure they are within 14 days old.`);
+      message.delete();
       
 
     }

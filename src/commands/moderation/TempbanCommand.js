@@ -27,8 +27,7 @@ module.exports = class TempbanCommand extends BaseCommand {
     if (!time) return message.channel.send('🚫 Please put a time for the tempban 🚫')
 
     await mentionedMember.send(banEmbed).catch(err => console.log(err));
-    await mentionedMember.ban({
-      days: 7,
+    await mentionedMember.Ban({
       reason: reason
     }).catch(err => console.log(err));
 

@@ -17,12 +17,12 @@ module.exports = class TempmuteCommand extends BaseCommand {
     let time = args[1];
     let reason = args.slice(2).join(" ");
 
-    const tempmuteEmbed = new discord.MessageEmbed
+    const tempmuteEmbed = new discord.MessageEmbed()
     .setTitle(`🛑You have been tempmuted from ${message.guild.name}🛑`)
     .addField(`Duration ${time}`, `Reason ${reason}`)
     .setTimestamp();
      
-    const tempmutefinishedEmbed = new discord.MessageEmbed
+    const tempmutefinishedEmbed = new discord.MessageEmbed()
     .setTitle(`Your tempmuted has been finished at ${message.guild.name}`);
 
     if (!args[0]) return message.channel.send('🛑You must mention a member to tempmute with a duration. \`¿tempmute @user time reason\`🛑');

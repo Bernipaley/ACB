@@ -16,7 +16,7 @@ module.exports = class TempbanCommand extends BaseCommand {
     let time = args[1];
     const banEmbed = new Discord.MessageEmbed()
     .setTitle(`🚫You have been tempbanned from ${message.guild.name}🚫`)
-    .addField(`reason: ${time}`, `Duration: ${reason}`)
+    .addField(`reason: ${reason}`, `Duration: ${time}`)
     .setTimestamp()
 
     if (!args[0]) return message.channel.send('🚫You must mention a member🚫, remember, ¿tempban @user time');

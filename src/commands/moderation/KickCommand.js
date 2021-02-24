@@ -6,6 +6,8 @@ module.exports = class KickCommand extends BaseCommand {
     super('kick', 'moderation', []);
   }
 
+  
+
  async  run(client, message, args) {
    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("```You dont have permissions to kick members")
     const mentionedMember = message.mentions.members.first();
@@ -28,7 +30,7 @@ module.exports = class KickCommand extends BaseCommand {
     }
 
     try {
-      await mentionedMember.kick(reason)
+      await mentionedMember.kick(reason), message.channel.send("Succesfully kicked")
     } catch (err) {
       console.log(err)
       return message.channel.send("i was unable to kick the user")

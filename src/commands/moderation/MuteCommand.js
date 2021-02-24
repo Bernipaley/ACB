@@ -19,14 +19,14 @@ module.exports = class MuteCommand extends BaseCommand {
       .setColor('RANDOM')
       .setTimestamp()
       .setFooter("Aviation Club Bot, Created by Bernardo Paley")
-      const sEmbed = new Discord.MessageEmbed()
+    const sEmbed = new Discord.MessageEmbed()
       .setTitle('Member muted');
-    
- 
-    if(!args[0]) return message.channel.send('🛑\`¿mute @user reason\`🛑 ');
-    if(!mentionedMember) return message.channel.send('🛑I dont find the member🛑');
-    if(!mentionedMember.user.id == message.author.id) return message.channel.send('🛑You cannot mute yourself🛑')
-    if(!mentionedMember.user.id == client.user.id) return message.channel.send('🛑You cannot mute me with my own command 🛑');
+
+
+    if (!args[0]) return message.channel.send('🛑\`¿mute @user reason\`🛑 ');
+    if (!mentionedMember) return message.channel.send('🛑I dont find the member🛑');
+    if (!mentionedMember.user.id == message.author.id) return message.channel.send('🛑You cannot mute yourself🛑')
+    if (!mentionedMember.user.id == client.user.id) return message.channel.send('🛑You cannot mute me with my own command 🛑');
     if (!reason) reason = 'No reason given';
     if (mentionedMember.roles.cache.has(muteRole)) return message.channel.send('🛑This member is already muted🛑');
     if (message.member.roles.highest.postition <= mentionedMember.roles.highest.postition) return message.channel.send('🛑You cannot mute someone with the same role or higher then you.🛑')
@@ -35,7 +35,7 @@ module.exports = class MuteCommand extends BaseCommand {
     await mentionedMember.send(muteEmbed).catch(err => console.log(err));
     await mentionedMember.roles.add(muteRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while tring to add the mute role to the member🛑')));
     await mentionedMember.roles.remove(memberRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while trying to remove the member roles to the user🛑')));
-    
+
 
 
   }

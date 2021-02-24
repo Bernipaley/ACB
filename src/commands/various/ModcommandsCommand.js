@@ -12,7 +12,7 @@ module.exports = class modcommandsCommand extends BaseCommand {
     .addField('N-1','¿ban')
     .addField('how to use it?','Simple! \`¿ban @user reason (//why you do want to ban this member//)\` the member will receive a DM with the info of his/her ban')
     .addField('N-2','¿tempban')
-    .addField('how to use it?','Simple! \`¿tempban ¿tempban @user because he didnt behave with the server30m //the member will receive a DM with the info of his/her tempban')
+    .addField('how to use it?','Simple! \` ¿tempban @user because he didnt behave with the server 30m\` //the member will receive a DM with the info of his/her tempban')
     .addField('N-3','¿kick')
     .addField('how to use it?',' \`¿kick @user reason (//why you do want to kick this member//)\`the member will receive a DM with the info of his/her kick')
     .addField('N-4','¿lock')

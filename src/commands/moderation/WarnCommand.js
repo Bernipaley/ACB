@@ -2,9 +2,9 @@ const BaseCommand = require('../../utils/structures/BaseCommand');
 const Discord = require('discord.js');
 
 
-module.exports = class SayCommand extends BaseCommand {
+module.exports = class WarnCommand extends BaseCommand {
  constructor() {
-   super('say', 'fun', []);
+   super('warn', 'fun', []);
  }
 
  async run(client, message, args) {

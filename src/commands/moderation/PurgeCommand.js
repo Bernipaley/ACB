@@ -22,7 +22,7 @@ module.exports = class PurgeCommand extends BaseCommand {
     try {
       await message.channel.bulkDelete(fetched)
       .then(messages => message.channel.send(`Succesfully! I have deleted ${messages.size} messages!`))
-      msg.edit(" ")
+      .then.msg.edit(" ")
       
     } catch (err) {
       console.log(err);

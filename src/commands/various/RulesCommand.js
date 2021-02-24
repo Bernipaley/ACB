@@ -18,6 +18,7 @@ module.exports = class RulesCommand extends BaseCommand {
     .addField("Rule 7","🚫Insulting, attacking or carrying out any type of badly hurtful action towards any member of the server")
     .addField("Rule 8","🚫Perform any SPAM class(BAN for 24 Hs.)")
     .addField("Rule 9","🚫Abuse your role")
+    .addField("///////////////VERIFICATION///////////////////////", "Send ¿pilot to <#812398101049770054>")
     .setFooter("Aviation Club Bot, Created by Bernardo Paley")
     .setTimestamp();
     message.delete()

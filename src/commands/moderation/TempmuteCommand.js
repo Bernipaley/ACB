@@ -32,16 +32,16 @@ module.exports = class TempmuteCommand extends BaseCommand {
     if (!time) return message.channel.send('🛑You must put a duration for the tempmute🛑');
     if (reason) reason = 'No reason given';
 
-
-    setTimeout(async function () {
-      await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
+    await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
       await mentionedMember.roles.remove(memberRole).catch(err => console.log(err));
       await mentionedMember.send(tempmuteEmbed).catch(err => console.log(err));
+    s
+    etTimeout(async function () {
+      await mentionedMember.roles.remove(muteRole).catch(err => console.log(err));
+      await mentionedMember.roles.add(memberRole).catch(err => console.log(err));
+      await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
     }, ms(time));
-    await mentionedMember.roles.remove(muteRole).catch(err => console.log(err));
-    await mentionedMember.roles.add(memberRole).catch(err => console.log(err));
-    await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
-
+    
 
 
 

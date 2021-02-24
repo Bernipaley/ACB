@@ -11,7 +11,7 @@ module.exports = class MuteCommand extends BaseCommand {
     if (!message.guild.me.hasPermission("MUTE_MEMBERS")) return message.channel.send('🛑YOU DONT HAVE PERMISSION TO USE THIS COMMAND🛑');
     let reason = args.slice(1).join(" ");
     const muteRole = message.guild.roles.cache.get('801623868787785738');
-    const memberRole = message.guild.roles.cache.get('813034318053507094, 801623868787785738, 801586686516789248, 801586636651626518, 801586503129104454');
+    const memberRole = message.guild.roles.cache.get('813034318053507094');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const muteEmbed = new Discord.MessageEmbed()
       .setTitle(`You were muted at ${message.guild.name}`)
@@ -33,8 +33,8 @@ module.exports = class MuteCommand extends BaseCommand {
 
 
     await mentionedMember.send(muteEmbed).catch(err => console.log(err));
-    await mentionedMember.roles.add(muteRole.id).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while tring to add the mute role to the member🛑')));
-    await mentionedMember.roles.remove(memberRole.id).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while trying to remove the member roles to the user🛑')));
+    await mentionedMember.roles.add(muteRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while tring to add the mute role to the member🛑')));
+    await mentionedMember.roles.remove(memberRole).catch(err => console.log(err).then(message.channel.send('🛑There was an issue while trying to remove the member roles to the user🛑')));
     
 
 

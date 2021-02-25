@@ -15,7 +15,7 @@ module.exports = class PurgeCommand extends BaseCommand {
     const amonutToDelete = Number(args[0], 10);
 
     const tempmuteEmbed = new discord.MessageEmbed()
-      .setTitle(`Messages succesfully deleted.`)
+      .setTitle("Messages succesfully deleted.")
       .setTimestamp();
 
     if (isNaN(amonutToDelete)) return message.channel.send("Number invalid!")

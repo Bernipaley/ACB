@@ -9,7 +9,7 @@ module.exports = class KickCommand extends BaseCommand {
   
 
  async  run(client, message, args) {
-   if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("```You dont have permissions to kick members")
+   if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You dont have permissions to kick members")
     const mentionedMember = message.mentions.members.first();
     let reason = args.slice(1).join(" ");
     if (!reason) reason = "No reason given"

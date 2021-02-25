@@ -10,9 +10,9 @@ module.exports = class UnmuteCommand extends BaseCommand {
     const BaseCommand = require('../../utils/structures/BaseCommand');
 const Discord = require('discord.js');
 
-module.exports = class MuteCommand extends BaseCommand {
+module.exports = class UnmuteCommand extends BaseCommand {
   constructor() {
-    super('mute', 'moderation', []);
+    super('unmute', 'moderation', []);
   }
 
   async run(client, message, args) {

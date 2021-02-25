@@ -1,13 +1,4 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
-const discord = require('discord.js')
-
-module.exports = class UnmuteCommand extends BaseCommand {
-  constructor() {
-    super('unmute', 'moderation', []);
-  }
-
-  async run(client, message, args) {
-    const BaseCommand = require('../../utils/structures/BaseCommand');
 const Discord = require('discord.js');
 
 module.exports = class UnmuteCommand extends BaseCommand {
@@ -28,8 +19,7 @@ module.exports = class UnmuteCommand extends BaseCommand {
       .setColor('RANDOM')
       .setTimestamp()
       .setFooter("Aviation Club Bot, Created by Bernardo Paley")
-    const sEmbed = new Discord.MessageEmbed()
-      .setTitle('Member muted');
+    
 
 
     if (!args[0]) return message.channel.send('🛑\`¿unmute @user reason\`🛑 ');
@@ -49,5 +39,4 @@ module.exports = class UnmuteCommand extends BaseCommand {
 
   }
 } 
-  }
-}
+  

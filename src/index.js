@@ -26,7 +26,7 @@ client.on("guildMemberAdd", async member => {
   .descripcion("Now we are "+member.guild.memberCount+ "At the server!");
 
   let img = await Zeew.WelcomeZeew(wel);
-  let attachment = new MessageAttachment(img, "FOTO BIENVENIDA ZEEW.gif");
+  let attachment = new MessageAttachment(img, "FOTO_BIENVENIDA_ZEEW.png");
   client.channels.resolve("812699579954757672").send(attachment);
 });
 
@@ -42,7 +42,7 @@ client.on("guildMemberRemove", async member => {
   .descripcion("+member.displayName+")
 
   let img = await Zeew.WelcomeZeew(wel);
-  let attachment = new MessageAttachment(img, "zeewapi-img.gif");
+  let attachment = new MessageAttachment(img, "FOTO_DESPEDIDA_ZEEW.png");
   client.channels.resolve("812699696195043378").send(attachment)
 })
 

@@ -12,7 +12,8 @@ module.exports = class PurgeCommand extends BaseCommand {
     if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("i dont have permissions to delete messages")
     if (!args[0]) return message.channel.send("You must put a number to use this command! (1-500)")
     const amonutToDelete = Number(args[0], 10);
-    
+    const deleteEmbed = new Discord.MessageEmbed()
+    .setTitle(`Succesfully! I have deleted ${messages.size} messages!`)
 
     if (isNaN(amonutToDelete)) return message.channel.send("Number invalid!")
     if (!Number.isInteger(amonutToDelete)) return message.channel.send("Number must be a whole number");
@@ -23,7 +24,8 @@ module.exports = class PurgeCommand extends BaseCommand {
 
     try {
       await message.channel.bulkDelete(fetched)
-      .then(messages => message.channel.send(`Succesfully! I have deleted ${messages.size} messages!`))
+      .then(messages => message.channel.send(deleteEmbed))
+      .then.message.delete();
       
       
     } catch (err) {

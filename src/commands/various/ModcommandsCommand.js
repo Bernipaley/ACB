@@ -25,8 +25,10 @@ module.exports = class modcommandsCommand extends BaseCommand {
     .addField('how to use it?',' \`¿purge 1-100 (messages do you want to delete)\` If someone spam, you must use this command and use tempmute it for 1hs as the rules say')
     .addField('N-8','¿tempmute')
     .addField('how to use it?','Simple! \` ¿tempmute @user because he didnt behave with the server 30m\` //the member will receive a DM with the info of his/her tempmute, and another one when his/her tempmute finish')
-    .addField('N-2','¿mute')
+    .addField('N-9','¿mute')
     .addField('how to use it?','Simple! \` ¿mute @user reason\` //the member will receive a DM with the info of his/her mute.')
+    .addField('N-10','¿unmute')
+    .addField('how to use it?','Simple! \` ¿unmute @user reason\` //the member will receive a DM with the info of his/her unmute.')
     .setTimestamp();
     message.delete()
     message.channel.send(rulesEmbed);

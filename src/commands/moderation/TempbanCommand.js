@@ -15,7 +15,7 @@ module.exports = class TempbanCommand extends BaseCommand {
     let reason = args.slice(2).join(" ");
     let time = args[1];
     const banEmbed = new Discord.MessageEmbed()
-    .setTitle(`🚫You have been tempbanned from ${message.guild.name}🚫`)
+    .setTitle(`🚫You have been tempbanned from ${message.guild.name} here is the invite link, you will able to join when your tempban finish. https://discord.gg/xgcwydb29S🚫`)
     .addField(`reason: ${reason}`, `Duration: ${time}`)
     .setTimestamp()
 

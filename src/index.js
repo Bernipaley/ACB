@@ -6,6 +6,7 @@ const client = new Client();
 const zeew = require("zeew");
 
 
+
 (async () => {
   client.commands = new Map();
   client.events = new Map();
@@ -15,3 +16,5 @@ const zeew = require("zeew");
   await client.login(config.token);
   
 })();
+
+

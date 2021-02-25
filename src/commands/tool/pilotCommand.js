@@ -1,5 +1,5 @@
-const { DiscordAPIError } = require('discord.js');
 const BaseCommand = require('../../utils/structures/BaseCommand');
+const discord = require('discord.js');
 
 module.exports = class pilotCommand extends BaseCommand {
   constructor() {
@@ -7,7 +7,7 @@ module.exports = class pilotCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
-    const pilotEmbed = new discord.MessageEmbed
+    const pilotEmbed = new discord.MessageEmbed()
     .setTitle("Pilot Role Added!");
      if (!message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send ("🛑 I DONT HAVE MANAGE ROLES PERMISSION 🛑");
 

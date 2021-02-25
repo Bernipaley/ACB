@@ -22,7 +22,6 @@ module.exports = class RulesCommand extends BaseCommand {
     .setFooter("Aviation Club Bot, Created by Bernardo Paley")
     .setTimestamp();
     message.delete()
-    message.channel.send("@everyone");
     message.channel.send(rulesEmbed);
   }
 }

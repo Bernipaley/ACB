@@ -20,12 +20,14 @@ module.exports = class TempmuteCommand extends BaseCommand {
     const tempmuteEmbed = new discord.MessageEmbed()
       .setTitle(`🛑You have been tempmuted from ${message.guild.name}🛑`)
       .addField(`Duration ${time}`, `Reason ${reason}`)
+      .setTitle('RANDOM')
       .setTimestamp();
       
 
     const tempmutefinishedEmbed = new discord.MessageEmbed()
       .setTitle(`Your tempmuted has been finished at ${message.guild.name}`)
       .setFooter('Aviation Club Bot, Created by bernardo paley')
+      .setColor('RANDOM');
 
     if (!args[0]) return message.channel.send('🛑You must mention a member to tempmute with a duration. \`¿tempmute @user time reason\`🛑');
     if (!mentionedMember) return message.channel.send('🛑I DONT FIND THE MEMBER🛑');
